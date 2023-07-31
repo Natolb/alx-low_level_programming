@@ -1,33 +1,22 @@
 #include "main.h"
 
 /**
- * cap_string - capitalizes all words of a string
- * @s: input string.
- *
- * Return: the pointer to dest.
+ * string_toupper -  function that changes all lowercase letter
+ * of a string to uppercase.
+ *@n: cadena de caracteres.
+ * Return: n.
  */
 
+char *string_toupper(char *n)
+{
+	int i;
 
-char *cap_string(char *s)
-{
-int count = 0, i;
-int separators[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
-
-if (*(s + count) >= 97 && *(s + count) <= 122)
-*(s + count) = *(s + count) - 32;
-count++;
-while (*(s + count) != '\0')
-{
-for (i = 0; i < 13; i++)
-{
-if (*(s + count) == separators[i])
-{
-if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
-*(s + (count + 1)) = *(s + (count + 1)) - 32;
-break;
-}
-}
-count++;
-}
-return (s);
+	i = 0;
+	while (n[i] != '\0')
+	{
+		if (n[i] >= 'a' && n[i] <= 'z')
+			n[i] = n[i] - 32;
+		i++;
+	}
+	return (n);
 }
